@@ -5,7 +5,7 @@
       android:versionName="1.0">
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" >
-        <activity android:name="com.headfirstlabs.ch03.nasa.iotd.NasaIotd"
+        <activity android:name=".NasaIotd"
                   android:label="@string/app_name"
                   android:screenOrientation="portrait" >
             <intent-filter>

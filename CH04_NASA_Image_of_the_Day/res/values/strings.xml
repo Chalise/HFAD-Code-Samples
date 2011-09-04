@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">NASA Daily Image</string>
+    <string name="image_title">Decorating the Sky</string>
+    <string name="image_date">Mon, 27 Dec 2010 00:00:00 EST</string>
+    <string name="image_description">This mosaic image taken by NASA\'s Wide-field Infrared 
+    	Survey Explorer, or WISE, features three nebulae that are part of the giant Orion 
+    	Molecular Cloud--the Flame nebula, the Horsehead nebula and NGC 2023. Despite its 
+    	name, there is no fire roaring in the Flame nebula. What makes this nebula shine 
+    	is the bright blue star seen to the right of the central cloud. This star, Alnitak, 
+    	is the easternmost star in Orion\'s belt. Wind and radiation from Alnitak blasts 
+    	away electrons from the gas in the Flame nebula, causing it to become ionized and 
+    	glow in visible light. The infrared glow seen by WISE is from dust warmed by 
+    	Alnitak\'s radiation. The famous Horsehead nebula appears in this image as a faint 
+    	bump on the lower right side of the vertical dust ridge. In visible light, this 
+    	nebula is easily recognizable as a dramatic silhouette in the shape of a horse\'s 
+    	head. It is classified as a dark nebula because the dense cloud blocks out the 
+    	visible light of the glowing gas behind it. WISE\'s infrared detectors can peer 
+    	into the cloud to see the glow of the dust itself. A third nebula, NGC 2023, can 
+    	be seen as a bright circle in the lower half of the image. NGC 2023 is classified 
+    	as a reflection nebula, meaning that the dust is reflecting the visible light of 
+    	nearby stars. But here WISE sees the infrared glow of the warmed dust itself. Color 
+    	in this image represents specific infrared wavelengths. Blue represents light 
+    	emitted at 3.4-micron wavelengths, mainly from hot stars. Relatively cooler objects, 
+    	such as the dust of the nebulae, appear green and red. Green represents 4.6-micron 
+    	light and red represents 12-micron light. This image was made from data collected 
+    	after WISE began to run out of its supply of solid hydrogen cryogen in August 2010. 
+    	Cryogen is a coolant used to make infrared detectors more sensitive. WISE mapped the 
+    	entire sky by July using four infrared detectors, but during the period from August 
+    	to October 2010, while the cryogen was depleting, WISE had only three detectors 
+    	operational, and the 12-micron detector was less sensitive. This turned out to be 
+    	a good thing in the case of this image, because the less-sensitive detector reduced 
+    	the glare of the Flame portion of the nebula enough to bring out details of the rest 
+    	of the nebula. Image Credit: NASA/JPL-Caltech/UCLA</string>
+    
+    
+    <string name="about">About NASA Daily Image</string>
+    
+    
+</resources>
