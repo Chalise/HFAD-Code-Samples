@@ -22,7 +22,9 @@ public final class R {
         public static final int imageDescription=0x7f070003;
         public static final int imageDisplay=0x7f070002;
         public static final int imageTitle=0x7f070000;
-        public static final int menu_show_about=0x7f070004;
+        public static final int menu_show_about=0x7f070006;
+        public static final int refreshButton=0x7f070004;
+        public static final int setWallpaperButton=0x7f070005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -31,10 +33,8 @@ public final class R {
         public static final int iodt_menu=0x7f060000;
     }
     public static final class string {
-        public static final int about=0x7f050004;
         public static final int app_name=0x7f050000;
-        public static final int image_date=0x7f050002;
-        public static final int image_description=0x7f050003;
-        public static final int image_title=0x7f050001;
+        public static final int refresh=0x7f050001;
+        public static final int setwallpaper=0x7f050002;
     }
 }

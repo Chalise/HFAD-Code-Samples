@@ -7,13 +7,16 @@ import java.net.URL;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.app.WallpaperManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.headfristlabs.ch04.nasa.iotd.R;
 
@@ -21,33 +24,66 @@ public class NasaIotd extends Activity implements IotdHandlerListener {
 	private final static String TAG = NasaIotd.class.getName(); 
 	private static final String URL = "http://www.nasa.gov/rss/image_of_the_day.rss";
 	
-	Handler handler;
-	ProgressDialog dialog;
+	private Handler handler;
+	private ProgressDialog dialog;
+	private Bitmap image;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handler = new Handler();
-        loadRssData();
+        refreshFromFeed();
 	}
 	
-	private void loadRssData() {
-		dialog = ProgressDialog.show(this, "", "Loading the Image of the Day");
-		Thread th = new Thread( 
-        	new Runnable() { 
-        		public void run() { 
-        			IotdHandler handler = new IotdHandler();
-        	        handler.setListener(NasaIotd.this);
-        	        try { 
-        	        	handler.processFeed(NasaIotd.this, new URL(URL));
-        	        } catch (Exception e) { 
-        	        	e.printStackTrace();
-        	        }
-        		}
-        	}
-        );
-        th.start();
+	private void refreshFromFeed() {
+		dialog = ProgressDialog.show(this, "Loading", "Loading the Image of the Day");
+		Thread th = new Thread(new Runnable() {
+			public void run() {
+				IotdHandler iotdHandler = new IotdHandler();
+				iotdHandler.setListener(NasaIotd.this);
+				try {
+					iotdHandler.processFeed(NasaIotd.this, new URL(URL));
+					image = NasaIotd.this.getBitmap(iotdHandler.getUrl());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		th.start();
 	}
+	
+	public void onRefreshButtonClicked(View view) { 
+		refreshFromFeed();
+	}
+	
+	public void onSetWallpaper(View view) { 
+		Thread th = new Thread() { 
+			public void run() { 
+				try {
+					WallpaperManager wallpaperManager = WallpaperManager.getInstance(NasaIotd.this);
+					wallpaperManager.setBitmap(image);
+					handler.post( new Runnable () {
+						public void run() { 
+							Toast.makeText(NasaIotd.this,
+									"Wallpaper set", 
+									Toast.LENGTH_SHORT
+							).show();
+					}});
+				} catch (Exception e) { 
+					handler.post( new Runnable () {
+						public void run() { 
+							Toast.makeText(NasaIotd.this,
+									"Error setting wallpaper", 
+									Toast.LENGTH_SHORT
+							).show();
+					}});
+					e.printStackTrace();
+				}
+			}
+		};
+		th.start();
+	}
+		
 
 	public void iotdParsed(final String url, final String title, final String description, final String date) {
 		handler.post(
@@ -87,3 +123,5 @@ public class NasaIotd extends Activity implements IotdHandlerListener {
 	}
  
 }
+
+	

@@ -1,39 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
 	android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-<LinearLayout 
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
-    
-    <TextView
-    	android:id="@+id/imageTitle"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-		android:textSize="20dp"    	
-		android:textColor="@color/image_title_color" 
-		android:layout_marginTop="5dp" 
-		android:layout_marginBottom="5dp" />
-    <TextView
-    	android:id="@+id/imageDate"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content" 
-    	android:textSize="10dp" 
-    	android:layout_marginBottom="5dp" />
-    <ImageView
-    	android:id="@+id/imageDisplay"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content" 
-    	android:layout_marginBottom="5dp" 
-    	android:adjustViewBounds="true"/>
-    <TextView
-    	android:id="@+id/imageDescription"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content" />	
-    
-</LinearLayout>    
+	<ScrollView 
+		android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="1" >
+	
+	<LinearLayout 
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" 
+	    android:gravity="center_horizontal" >
+	    <TextView
+	    	android:id="@+id/imageTitle"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+			android:textSize="20dp"    	
+			android:textColor="@color/image_title_color" 
+			android:layout_marginTop="5dp" 
+			android:layout_marginBottom="5dp" />
+	    <TextView
+	    	android:id="@+id/imageDate"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content" 
+	    	android:textSize="10dp" 
+	    	android:layout_marginBottom="5dp" />
+	    <ImageView
+	    	android:id="@+id/imageDisplay"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content" 
+	    	android:layout_marginBottom="5dp" 
+	    	android:adjustViewBounds="true"/>
+	    <TextView
+	    	android:id="@+id/imageDescription"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content" />	
+	    
+	</LinearLayout>    
+	</ScrollView>
+	
+	<LinearLayout 
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="0"
+	    android:paddingTop="5dp"
+	    android:gravity="center_horizontal"
+		android:background="#ff8D8D8D" >	
 
-</ScrollView>
+		<Button android:text="@string/refresh" 
+			android:onClick="onRefreshButtonClicked" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:id="@+id/refreshButton" />
+		
+		<Button android:text="@string/setwallpaper" 
+			android:onClick="onSetWallpaper" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:id="@+id/setWallpaperButton" />
+
+	</LinearLayout>	
+
+</LinearLayout>
