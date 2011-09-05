@@ -5,6 +5,18 @@ If you've already purchased the book, thanks! And if you haven't, I encourage yo
 You can find a link here to buy either the digital edition, the print edition, or both. Currently, the book is in 
 early release in digital only format, and is being updated regularly until final publication (currently estimated in late October).  
 
+### Installation Instructions
+
+1. Be sure to have Eclipse and the Android SDK installed per the instructions in Chapter 1. 
+1. Open up a terminal and create a new directory called <pre>HFAD-Code-Samples</pre> anywhere on your computer
+1. cd into the <pre>HFAD-Code-Samples</pre> directory
+1. Clone the git repo by entering the following command <pre>git clone git@github.com:jonathansimon/HFAD-Code-Samples.git .</pre>
+1. Open up eclipse and open the <pre>HFAD-Code-Samples</pre> directory as your workspace. You'll need to switch workspaces or open this as the default workspace. 
+1. Set the Android SDK location in Eclipse. This is stored by workspace, so even if you set the Android SDK location for another workspace, you'll need to do it again here. You can set the location by going to Eclipse -> Preferences -> Android and entering the Android SDK Location
+1. Set the JRE to 1.5 or 1.6. You can set the JRE for the workspace by going to Eclipse -> Preferences -> Java -> Installed JRE's and selecting 1.5 or 1.6
+1. Import the projects by going to File -> Import -> Existing projects into workspace. Select the <pre>HFAD-Code-Samples</pre> directory and you'll see all of the chapter projects display in the dialog window. Select all and press Finish. 
+
+And you're ready to run the sample apps! 
 
 ### Organization 
 
